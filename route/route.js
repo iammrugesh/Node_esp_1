@@ -17,7 +17,7 @@ router.post('/', function (req, res) {
   res.redirect('/');
 });
 
-router.use((req, res , next) => {
+router.use((req, res) => {
   console.log('Error');
   res.sendFile(path.join(__dirname, '../views', 'error.html'));
 });
