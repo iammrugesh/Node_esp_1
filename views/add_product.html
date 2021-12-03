@@ -5,14 +5,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
-    <title>Error</title>
+    <title>Add Product</title>
 </head>
 <body>
     <div class="container">
         <div class="row">
-            <div class="col">
-               Page Not Found!
-            </div>
+            <form action="/product_list" method="POST">
+                <div class="form-group">
+                  <label for="product">Add Product</label>
+                  <input type="text" class="form-control" id="product" name="product">
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
         </div>
     </div>
 </body>
