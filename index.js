@@ -1,23 +1,28 @@
 const express = require('express');
-const app = express();
-const port = 3000;
-var path = require('path');
 const bodyParser = require('body-parser');
-app.use(bodyParser.urlencoded({ extended: false }));
-
-// route define
+const path = require('path');
 const route = require('./route/route.js');
 const admin = require('./route/admin.js');
 const users = require('./route/users.js');
+
+const app = express();
+const port = 3000;
+
+app.set('view engine', 'ejs');
+app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use('/', route);
 app.use('/admin', admin);
 app.use('/', users);
 
 app.use((req, res) => {
-  console.log('Error');
-  res.sendFile(path.join(__dirname,'views','error.html'));
+  // res.sendFile(path.join(__dirname,'views','error.html'));
+  const pageTital = 'Error';
+  res.render('error',{
+    pageTital:pageTital
+  });
 });
+
 app.listen(port, () => {
   console.log(`port : ${port}`);
 });

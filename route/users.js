@@ -1,4 +1,4 @@
-var express = require('express');
-var users = express.Router();
-var path = require('path');
+const express = require('express');
+const users = express.Router();
+const path = require('path');
 module.exports = users;
